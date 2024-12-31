@@ -1,0 +1,31 @@
+#include <Arduino.h>
+#include <IRremoteESP8266.h>
+#include <IRsend.h>
+
+const uint16_t kIrLed = D2; // Wemos ESP8266 (D2).
+IRsend irsend(kIrLed);
+
+
+void setup() {
+irsend.begin();
+Serial.begin(115200, SERIAL_8N1);
+}
+
+void loop() {
+
+{ irsend.sendRC5(0xFFF, 12); // Alusta code Open
+Serial.println(" Alusta code OPEN");
+delay(5000);}
+
+{ irsend.sendRC5(0x7FF, 12); // Alusta code nogmaals Open
+Serial.println(" Alusta code nogmaals OPEN = UIT");
+delay(2000);}
+
+{ irsend.sendRC5(0x7FE, 12); // Alusta code dicht
+Serial.println(" Alusta code DICHT");
+delay(5000);}
+
+{ irsend.sendRC5(0xFFE, 12); // Alusta code nogmaals dicht
+Serial.println(" Alusta code nogmaals DICHT UIT");
+delay(2000); }
+}
