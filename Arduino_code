@@ -1,0 +1,57 @@
+******************************************************************************
+
+#include <IRremote.h>
+/*
+IR remote Libraries van:
+
+Aansluitingen voor de Alusta Roosterunit:
+De data van pin 3-Uno naar de IR TSOP48 poot 3 (+5V)
+Spanning 5V via weerstand 180 Omh naar de IR TSOP48 poot 1
+De ground aan de IR in de roosterunit wordt niet aangesloten
+IR roosterunit kan blijven zitten - Topcase001
+*/
+IRsend irsend;
+
+void setup(){
+Serial.begin(115200);
+}
+
+void loop(){
+
+{ irsend.sendRC5(0xFFF, 12); // Alusta code Open
+Serial.println(" Alusta code OPEN");
+delay(5000);
+}
+
+{ irsend.sendRC5(0x7FF, 12); // Alusta code nogmaals Open
+Serial.println(" Alusta code nogmaals OPEN = UIT");
+delay(2000);
+}
+
+{ irsend.sendRC5(0x7FE, 12); // Alusta code dicht
+Serial.println(" Alusta code DICHT");
+delay(5000);
+}
+
+{ irsend.sendRC5(0xFFE, 12); // Alusta code nogmaals dicht
+Serial.println(" Alusta code nogmaals DICHT UIT");
+delay(2000);
+}
+/*
+De HEX codes van de afstandsbediening zijn:
+open = 0xFFF nogmaals = uit = 0x7FF
+dicht = 0x7FF nogmaals = uit = 0xFFE
+auto = 0x7FD nogmaals = uit = 0xFFD
+programma = 0x7FC nogmaals = uit = 0xFFC
+
+Kan ook Decimaal
+De DEC codes van de afstandsbedining zijn:
+open = 2047 nogmaals = uit = 4095
+dicht = 2046 nogmaals = uit = 4094
+auto = 2045 nogmaals = uit = 4093
+programma = 2044 nogmaals = uit = 4092
+*/
+
+}
+***********************************************************************************
+
