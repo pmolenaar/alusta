@@ -1,0 +1,6 @@
+De vier draadjes aan de bovenkant van de print zijn de voeding van de esp en de motorsturing. De twee rechtse (rood D2, geel D3) zijn om de motor aan te sturen, zowel linksom als rechtsom. De twee andere zijn de voeding voor de esp.
+De aansluitingen van de potmeter worden gebruikt om de begin en eindstand van het rooster te bepalen. AO ingang van de esp. Het is een synchrone motor en die laat je stoppen als de waarde van de potmeter een seconde dezelfde waarde af geeft. Zowel bij open als dicht. De open en dicht waarde leg je vast zodat als je de instructie open geeft de motor stopt bij deze waarde en bij dicht hetzelfde, simpel toch?
+Bij de instructie open laat je de esp de groene led branden en bij dicht de rode led D5 en D6.
+De led is overigens twee kleurig
+Voorlopig heb je hier genoeg aan.
+Zoals jij die foto’s hebt gemaakt die er keurig uit zien en straks de aansluitingen erbij staan wordt het overzichtelijker en kan ik meer duiden.
