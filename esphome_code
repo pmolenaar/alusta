@@ -1,0 +1,40 @@
+remote_transmitter:
+  pin: D2
+  carrier_duty_percent: 50%
+
+switch:
+  - platform: template
+    name: "Rooster_Open"
+    turn_on_action:
+      remote_transmitter.transmit_rc5:
+        address: 0x1F
+        command: 0x3F
+        repeat:
+          times: 2
+        
+  - platform: template
+    name: "Rooster_Dicht"
+    turn_on_action:
+      remote_transmitter.transmit_rc5:
+        address: 0x1F
+        command: 0x3E
+        repeat:
+          times: 2
+
+  - platform: template
+    name: "Rooster_Auto"
+    turn_on_action:
+      remote_transmitter.transmit_rc5:
+        address: 0x1F
+        command: 0x3D
+        repeat:
+          times: 2
+
+  - platform: template
+    name: "Rooster_Programma"
+    turn_on_action:
+      remote_transmitter.transmit_rc5:
+        address: 0x1F
+        command: 0x3C
+        repeat:
+          times: 2
